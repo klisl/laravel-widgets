@@ -1,5 +1,6 @@
 {
     "name": "klisl/laravel-widgets",
+	"version":"1.0",
     "description": "Package for using widgets in Laravel-5",
 	"type": "library",
 	"keywords": [
