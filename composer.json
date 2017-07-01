@@ -15,8 +15,9 @@
 			"role": "Developer"
         }
     ],
-	"minimum-stability": "stable",
-	"require": {},
+	"require": {
+        "php": ">=5.4"
+    },
     "autoload": {
         "psr-4": {
 			"Klisl\\Widgets\\": "src"
