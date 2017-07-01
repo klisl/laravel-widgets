@@ -1,0 +1,25 @@
+{
+    "name": "klisl/klisl-widgets",
+    "description": "Package for using widgets in Laravel-5",
+	"type": "library",
+	"keywords": [
+        "laravel",
+        "widgets"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Klimenchuk",
+            "email": "ksl80@ukr.net",
+			"homepage": "http://klisl.com",
+			"role": "Developer"
+        }
+    ],
+	"minimum-stability": "dev",
+	"require": {},
+    "autoload": {
+        "psr-4": {
+			"Klisl\\Widgets\\": "src"
+        }
+    }
+}
