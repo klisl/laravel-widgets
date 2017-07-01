@@ -1,5 +1,5 @@
 {
-    "name": "klisl/klisl-widgets",
+    "name": "klisl/laravel-widgets",
     "description": "Package for using widgets in Laravel-5",
 	"type": "library",
 	"keywords": [
