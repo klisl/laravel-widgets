@@ -13,14 +13,11 @@ class WidgetServiceProvider extends ServiceProvider
 	
     public function boot()
     {
-		
-		
-		
-		
+			
 		//Указываем, что файлы из папки config должны быть опубликованы при установке
-        $this->publishes([__DIR__ . '/config/' => config_path() . "/"], 'config');
+        $this->publishes([__DIR__ . '/config/' => config_path() . "/"]);
 		
-		//Опубликуем тестовый виджет с каталогом для пользовательских виджетов
+		//Так же публикуем тестовый виджет с каталогом для пользовательских виджетов
 		$this->publishes([__DIR__ . '/test/' => 'app']);
 
 		
@@ -39,6 +36,7 @@ class WidgetServiceProvider extends ServiceProvider
 		 * app\Widgets\view
 		 */
         $this->loadViewsFrom(app_path() .'/Widgets/views', 'Widgets');
+		
     }
 
 	

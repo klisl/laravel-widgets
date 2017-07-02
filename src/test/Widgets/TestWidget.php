@@ -1,6 +1,6 @@
 <?php
 
-namespace Klisl\Widgets;
+namespace App\Widgets;
 
 use Klisl\Widgets\Contract\ContractWidget;
 

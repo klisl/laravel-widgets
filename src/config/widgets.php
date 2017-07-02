@@ -7,6 +7,6 @@
 
 return [
 
-	'test' => 'Klisl\Widgets\TestWidget',
+	'test' => 'App\Widgets\TestWidget',
 
 ];
