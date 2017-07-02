@@ -12,4 +12,3 @@ class TestWidget implements ContractWidget{
 		
 	}	
 }
-
