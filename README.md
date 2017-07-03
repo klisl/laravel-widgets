@@ -1,4 +1,4 @@
-Klisl  laravel-widgets
+laravel-widgets
 =================
 [![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
@@ -14,6 +14,7 @@ Klisl  laravel-widgets
   * Только самый необходимый функционал, разработанный с учетом архитектуры Laravel-5.4
 
 
+  
 Установка
 ------------------
 Установка пакета с помощью Composer.
@@ -29,11 +30,12 @@ composer require klisl/laravel-widgets
 Klisl\Widgets\WidgetServiceProvider::class,
 ```
 
-После этого выполните в консоли команду публикации нужных ресурсов
+После этого выполните в консоли команду публикации нужных ресурсов:
 
 ```
 php artisan vendor:publish --provider="Klisl\Widgets\WidgetServiceProvider"
 ```
+
 
 Использование
 -------------
@@ -49,7 +51,8 @@ php artisan vendor:publish --provider="Klisl\Widgets\WidgetServiceProvider"
 Если виджет должен, для своей работы, получить какие-то данные из контроллера и тд. (передаются в шаблоне), то необходимо предусмотреть метод конструктор для класса виджета с получением аргумента в виде массива параметров.
 
 
-##### Примеры
+Примеры
+-------------
 
 Пример минимального класса виджета:
 
@@ -110,3 +113,5 @@ class TestWidget implements ContractWidget{
 ```
 
 В каталоге `app\Widgets` уже находится тестовый виджет. Вы можете создавать свои на его основе.
+
+Мой блог: [klisl.com](http://klisl.com)  
