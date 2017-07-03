@@ -15,10 +15,10 @@ class WidgetServiceProvider extends ServiceProvider
     {
 			
 		//Указываем, что файлы из папки config должны быть опубликованы при установке
-        $this->publishes([__DIR__ . '/config/' => config_path() . "/"]);
+        $this->publishes([__DIR__ . '/../config/' => config_path() . '/']);
 		
 		//Так же публикуем тестовый виджет с каталогом для пользовательских виджетов
-		$this->publishes([__DIR__ . '/test/' => 'app']);
+		$this->publishes([__DIR__ . '/../app/' => app_path() . '/']);
 
 		
 		/*
