@@ -23,9 +23,8 @@ laravel-widgets
 composer require klisl/laravel-widgets
 ```
 
-По завершении этой операции, добавьте класс поставщика услуг в файл `config/app.php` вашего проекта:
+По завершении этой операции, добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
 
-##### Service Provider
 ```php
 Klisl\Widgets\WidgetServiceProvider::class,
 ```
