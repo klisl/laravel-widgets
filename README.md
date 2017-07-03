@@ -1,34 +1,112 @@
-Klisl laravel-widgets
+Klisl  laravel-widgets
 =================
 [![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 Пакет для удобного создания и использования виджетов в Laravel-5
 
-The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code. At the moment the package is not unit tested, but is planned to be covered later down the road.
+  * Удобный синтаксис - вызов любого виджета из шаблона с помощью простой директивы @widget, которая в качестве первого аргумента принимает название виджета, например:
+```php
+@widget('menu')
+```
+  * Простые правила создания виджетов.
+  * Создание объекта виджета только в случае непосредственного его запроса.
+  * Только самый необходимый функционал, разработанный с учетом архитектуры Laravel-5.4
 
-Documentation
--------------
-You will find user friendly and updated documentation in the wiki here: [Caffeinated Widgets Wiki](https://github.com/caffeinated/widgets/wiki)
 
-Quick Installation
+Установка
 ------------------
-Begin by installing the package through Composer.
+Установка пакета с помощью Composer.
 
 ```
-composer require caffeinated/widgets
+composer require klisl/laravel-widgets
 ```
 
-Once this operation is complete, simply add the service provider class and facade alias to your project's `config/app.php` file:
+По завершении этой операции, добавьте класс поставщика услуг в файл `config/app.php` вашего проекта:
 
 ##### Service Provider
 ```php
-Caffeinated\Widgets\WidgetsServiceProvider::class,
+Klisl\Widgets\WidgetServiceProvider::class,
 ```
 
-##### Facade
+После этого выполните в консоли команду публикации нужных ресурсов
+
+```
+php artisan vendor:publish --provider="Klisl\Widgets\WidgetServiceProvider"
+```
+
+Использование
+-------------
+
+В файле `config\widgets.php` находится массив, в котором, в качестве ключей нужно указать названия для виджетов которые вы будете создавать, а в качестве значений названия классов виджетов (с пространством имен). Например:
 ```php
-'Widget' => Caffeinated\Widgets\Facades\Widget::class,
+'test' => 'App\Widgets\TestWidget'
 ```
 
-And that's it! With your coffee in reach, start building out some awesome widgets!
+Классы для своих виджетов нужно создавать в папке `app\Widgets`. Для размещения шаблонов виджетов предназначена папка `app\Widgets\views`.
+
+Класс виджета должен иметь соответствующее пространство имен: `namespace App\Widgets`. Так же класс виджета должен включать интерфейс ContractWidget и реализовывать его метод execute(). 
+Если виджет должен, для своей работы, получить какие-то данные из контроллера и тд. (передаются в шаблоне), то необходимо предусмотреть метод конструктор для класса виджета с получением аргумента в виде массива параметров.
+
+
+##### Примеры
+
+Пример минимального класса виджета:
+
+```php
+<?php
+
+namespace App\Widgets;
+
+use Klisl\Widgets\Contract\ContractWidget;
+
+class TestWidget implements ContractWidget{
+	
+	public function execute(){
+				
+		return view('Widgets::test');
+		
+	}	
+}
+```
+
+Шаблон данного виджета, файл test.blade.php (с произвольным контентом) должен находиться в папке `app\Widgets\views`.
+
+Вызов данного виджета (из основного шаблона нужного контроллера):
+```php
+@widget('test')
+```
+
+
+Пример с передачей параметров:
+```php
+<?php
+
+namespace App\Widgets;
+
+use Klisl\Widgets\Contract\ContractWidget;
+
+class TestWidget implements ContractWidget{
+	
+	public $num;
+		
+	public function __construct ($data){
+		$this->num = $data['num'];
+	}
+		
+	public function execute(){
+				
+		return view('Widgets::test', [
+			'num' => $this->num
+		]);
+		
+	}	
+}
+```
+
+Вызов данного виджета с передачей параметров для обработки:
+```php
+@widget('test', ['num' => 5])
+```
+
+В каталоге `app\Widgets` уже находится тестовый виджет. Вы можете создавать свои на его основе.
