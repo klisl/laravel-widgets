@@ -23,7 +23,7 @@ class WidgetServiceProvider extends ServiceProvider
 		
 		/*
 		 * Регистрируется директива для шаблонизатора Blade
-		 * Пример обращаения к виджету: @widget('menu')
+		 * Пример обращения к виджету: @widget('menu')
 		 * Можно передать параметры в виджет:
 		 * @widget('menu', [$data1,$data2...])
 		 */
