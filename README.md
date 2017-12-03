@@ -23,11 +23,13 @@ laravel-widgets
 composer require klisl/laravel-widgets
 ```
 
-По завершении этой операции, добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
+Если версия Laravel меньше чем 5.5 - добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
 
 ```php
 Klisl\Widgets\WidgetServiceProvider::class,
 ```
+Для версии >=5.5 данный шаг выполнится автоматически.
+
 
 После этого выполните в консоли команду публикации нужных ресурсов:
 
