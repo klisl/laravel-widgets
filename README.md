@@ -1,6 +1,6 @@
 laravel-widgets
 =================
-[![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel 5](https://img.shields.io/badge/Laravel-5-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 Пакет для удобного создания и использования виджетов в Laravel-5
@@ -28,7 +28,7 @@ composer require klisl/laravel-widgets
 ```php
 Klisl\Widgets\WidgetServiceProvider::class,
 ```
-Для версии >=5.5 данный шаг выполнится автоматически.
+Для версии >=5.5 данный шаг можно пропустить.
 
 
 После этого выполните в консоли команду публикации нужных ресурсов:
