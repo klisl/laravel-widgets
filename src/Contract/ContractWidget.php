@@ -2,6 +2,10 @@
 
 namespace Klisl\Widgets\Contract;
 
+/**
+ * Interface ContractWidget
+ * @package Klisl\Widgets\Contract
+ */
 interface ContractWidget {
 	
 	/**

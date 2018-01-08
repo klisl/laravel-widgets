@@ -6,11 +6,18 @@ use Illuminate\Support\ServiceProvider;
 use App;
 use Blade;
 
-
+/**
+ * Class WidgetServiceProvider
+ * @package Klisl\Widgets
+ */
 class WidgetServiceProvider extends ServiceProvider
 {
 
-	
+    /**
+     * Инициализация расширения
+     *
+     * @return void
+     */
     public function boot()
     {
 			
@@ -39,7 +46,10 @@ class WidgetServiceProvider extends ServiceProvider
 		
     }
 
-	
+
+    /**
+     * @return \Klisl\Widgets\Widget
+     */
     public function register()
     {
 
