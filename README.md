@@ -115,4 +115,4 @@ class TestWidget implements ContractWidget{
 
 В каталоге `app\Widgets` уже находится тестовый виджет. Вы можете создавать свои на его основе.
 
-Мой блог: [klisl.com](http://klisl.com)  
+Мой блог: [klisl.com](https://klisl.com)  
